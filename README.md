@@ -185,7 +185,7 @@
   
 37. Crear un nuevo usuario
 
-	`# useradd -m -g users -G wheel,storage,power -s /bin/bash zahid`
+	`# useradd -m -g users -G wheel,storage,power,ftp,http,rfkill -s /bin/zsh zahid`
   
 38. Crear contraseña para nuevo usuario
 
