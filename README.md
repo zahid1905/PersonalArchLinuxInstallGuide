@@ -101,7 +101,7 @@
   
 17.	Instalar los paquetes esenciales
 
-	`# pacstrap /mnt base linux-lts linux-firmware nano iproute2 dhcpcd wpa_supplicant netctl grub zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting sudo dialog xf86-video-intel ntfs-3g os-prober`
+	`# pacstrap /mnt base linux-lts linux-firmware nano iproute2 dhcpcd wpa_supplicant netctl grub zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting sudo dialog xf86-video-intel ntfs-3g os-prober ifplugd`
   
 18.	Generar un archivo fstab
 
@@ -225,8 +225,10 @@
 
 	`$ yay -S wd719x-firmware aic94xx-firmware`
   
-46. Instalar X11
+46. Habilitar los servicios de conección de red al inicio
 
-	`# pacman -S openbox ttf-dejavu ttf-liberation`
+	`# systemctl enable netctl-ifplugd@enp3s0.service`
+	
+	`# systemctl enable netctl-auto@wlp1s0b1.service`
   
 47. Visitar https://blog.desdelinux.net/instalacion-de-openbox-en-arch-linux/
