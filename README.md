@@ -231,4 +231,11 @@
 	
 	`# systemctl enable netctl-auto@wlp1s0b1.service`
   
-47. Visitar https://blog.desdelinux.net/instalacion-de-openbox-en-arch-linux/
+47. Instalar X11, Openbox, LightDM y otras utililerias GUI
+
+	`# pacman -S xorg-server lightdm lightdm-gtk-greeter openbox obconf pcmanfm tint2 xfce4-terminal nitrogen mousepad`
+	
+48. Establecer distribución de teclado para X11
+
+	`# localectl set-x11-keymap latam [hpmini110 [deadtilde,dvorak [grp:alt_shift_toggle]]]`
+	
