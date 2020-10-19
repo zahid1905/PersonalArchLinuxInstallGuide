@@ -237,5 +237,5 @@
 	
 48. Establecer distribución de teclado para X11
 
-	`# localectl set-x11-keymap latam [hpmini110 [deadtilde,dvorak [grp:alt_shift_toggle]]]`
+	`# localectl set-x11-keymap latam hpmini110 deadtilde,dvorak grp:alt_shift_toggle`
 	
