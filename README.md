@@ -101,7 +101,7 @@
   
 17.	Instalar los paquetes esenciales
 
-	`# pacstrap /mnt base linux-lts linux-firmware nano iproute2 dhcpcd wpa_supplicant netctl grub zsh 	zsh-completions zsh-autosuggestions zsh-syntax-highlighting sudo dialog xf86-video-intel`
+	`# pacstrap /mnt base linux-lts linux-firmware nano iproute2 dhcpcd wpa_supplicant netctl grub zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting sudo dialog xf86-video-intel ntfs-3g os-prober`
   
 18.	Generar un archivo fstab
 
