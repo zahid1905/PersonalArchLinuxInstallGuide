@@ -233,7 +233,7 @@
   
 47. Instalar X11, Openbox, LightDM y otras utililerias GUI
 
-	`# pacman -S xorg-server lightdm lightdm-gtk-greeter openbox obconf pcmanfm tint2 xfce4-terminal nitrogen mousepad`
+	`# pacman -S xorg-server lightdm lightdm-gtk-greeter openbox obconf pcmanfm tint2 leafpad nitrogen sakura`
 	
 48. Establecer distribución de teclado para X11
 
