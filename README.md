@@ -46,9 +46,9 @@
 
 	`# ping archlinux.org`
   
-9.	Actualizar el reloj para que coincida con Windows
+9.	Actualizar el reloj
 
-	`# timedatectl set-local-rtc 1 --adjust-system-clock`
+	`# timedatectl set-ntp true`
   
 10.	Listar los dispositivos y las particiones
 
@@ -57,7 +57,7 @@
 11.	Preparar las particiones con fdisk
 	1.	Abrir fdisk en el dispositivo de almacenamiento
   
-		`# fdisk /dev/sda`
+		`# fdisk /dev/sdX(LetraDispositivo)`
     
 	2.	Listar las particiones
   
@@ -65,15 +65,15 @@
     
 	3.	Cambiar el tipo de partición a Linux
   
-		`t 5 83`
+		`t X(NumeroParticion) 83`
     
 	4.	Cambiar el tipo de partición a Swap
   
-		`t 6 82`
+		`t X(NumeroParticion) 82`
     
 	5.	Marcar partición como de arranque
   
-		`a 5`
+		`a X(NumeroParticion)`
     
 	6.	Escribir los cambios
   
@@ -81,19 +81,19 @@
     
 12.	Formatear la partición como btrfs
 
-	`# mkfs.btrfs -f /dev/sda5`
+	`# mkfs.btrfs -f /dev/sdX(LetraDispositivo)Y(NumeroParticion)`
   
 13.	Formatear la partición como Swap
 
-	`# mkswap /dev/sda6`
+	`# mkswap /dev/sdX(LetraDispositivo)Y(NumeroParticion)`
   
 14.	Montar la partición root a /mnt
 
-	`# mount /dev/sda5 /mnt`
+	`# mount /dev/sdX(LetraDispositivo)Y(NumeroParticion) /mnt`
   
 15.	Activar la partición Swap
 
-	`# swapon /dev/sda6`
+	`# swapon /dev/sdX(LetraDispositivo)Y(NumeroParticion)`
   
 16.	Actualizar la lista con los 5 mejores servidores
 
@@ -101,7 +101,7 @@
   
 17.	Instalar los paquetes esenciales
 
-	`# pacstrap /mnt base linux-lts linux-firmware nano iproute2 dhcpcd wpa_supplicant netctl grub zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting sudo dialog xf86-video-intel ntfs-3g os-prober ifplugd`
+	`# pacstrap /mnt base linux-lts linux-firmware nano iproute2 dhcpcd wpa_supplicant networkmanager grub zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting sudo dialog xf86-video-intel ntfs-3g os-prober`
   
 18.	Generar un archivo fstab
 
@@ -111,9 +111,7 @@
 
 	`# arch-chroot /mnt`
   
-20.	Agregar la partición Swap a fstab
-
-	`# echo “UUID=$(lsblk -no UUID /dev/sda6) none swap defaults 0 0” > /etc/fstab`
+20.	Agregar otras particiónes a fstab
   
 21.	Cambiar zona horaria
 
@@ -179,9 +177,9 @@
   
 35. Acceder como root
 
-36. Crear un perfil para netctl en /etc/netctl/wifi-ARRIS-CA32
+36. Conectarse a la red con networkmanager
 
-	`# wifi-menu`
+	`# nmtui`
   
 37. Crear un nuevo usuario
 
