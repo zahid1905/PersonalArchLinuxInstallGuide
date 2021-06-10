@@ -237,3 +237,5 @@
 
 	`# localectl set-x11-keymap latam hpmini110 deadtilde,dvorak grp:alt_shift_toggle`
 	
+48. Instalar fuentes de Microsoft:
+	https://wiki.archlinux.org/title/Microsoft_fonts#Installation
