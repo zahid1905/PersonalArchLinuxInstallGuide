@@ -2,7 +2,7 @@
 1.	Preparación del medio de instalación
 
 	`# dd bs=4M if=Archlinux_2020.10.01_x86-64.iso of=/dev/sdc status=progress oflag=sync`
-  
+	  
 2.	Arrancar desde el medio de instalación
 
 3.	Listar configuraciones de teclado disponibles
